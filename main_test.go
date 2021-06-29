@@ -3,6 +3,7 @@ package main_test
 
 import (
 	"log"
+	"main"
 	"os"
 	"testing"
 )
@@ -15,6 +16,7 @@ func TestMain(m *testing.M) {
 		os.Getenv("APP_DB_PASSWORD"),
 		os.Getenv("APP_DB_NAME"),
 		os.Getenv("APP_DB_SCHEMA"))
+
 	ensureTableExists()
 	code := m.Run()
 	clearTable()
